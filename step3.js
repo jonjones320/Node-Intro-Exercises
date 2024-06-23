@@ -1,5 +1,6 @@
 const fs = require('fs');
 const process = require('process');
+const axios = require('axios');
 
 function output(input, out) {
     if (out) {
@@ -39,6 +40,7 @@ async function webCat(url, out) {
 };
 
 let path = process.argv[2];
+let out = process.argv[3];
 
 if (path.slice(0,4) === 'http') {
     let content = webCat(path);
